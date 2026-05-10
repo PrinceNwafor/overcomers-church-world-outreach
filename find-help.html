@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Help | Overcomers Church World Outreach</title>
+  <meta name="description" content="Whatever you're going through, we believe God has an answer. Find help, hope, and healing through OCWO's pastoral care, prayer, and community support.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── HERO ── */
+    .help-hero {
+      background: linear-gradient(160deg, #0d0505 0%, #1e0808 35%, #3D0A0A 65%, #5c1212 100%);
+      padding: 130px 0 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .help-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 120%, rgba(139,28,28,0.3) 0%, transparent 70%);
+    }
+    .help-hero__badge {
+      display: inline-block;
+      background: rgba(201,160,32,0.15);
+      border: 1px solid rgba(201,160,32,0.4);
+      color: #C9A020;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 7px 20px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+    .help-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      color: #fff;
+      margin-bottom: 24px;
+      line-height: 1.15;
+      position: relative;
+    }
+    .help-hero h1 em {
+      font-style: normal;
+      color: #C9A020;
+    }
+    .help-hero p {
+      color: rgba(255,255,255,0.72);
+      font-size: 1.15rem;
+      max-width: 560px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+      position: relative;
+    }
+    .help-hero__scripture {
+      display: inline-block;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 16px 28px;
+      color: rgba(255,255,255,0.65);
+      font-size: 0.9rem;
+      font-style: italic;
+      position: relative;
+      max-width: 480px;
+    }
+    .help-hero__scripture strong { color: #C9A020; font-style: normal; }
+
+    /* ── INTRO STRIP ── */
+    .intro-strip {
+      background: #fff;
+      padding: 48px 0;
+      text-align: center;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    }
+    .intro-strip p {
+      font-size: 1.05rem;
+      color: #555;
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+    .intro-strip strong { color: #8B1C1C; }
+
+    /* ── HELP CATEGORIES GRID ── */
+    .categories-section {
+      background: #0d0505;
+      padding: 80px 0 100px;
+    }
+    .categories-section .section__tag { color: #C9A020; border-color: rgba(201,160,32,0.3); background: rgba(201,160,32,0.08); }
+    .categories-section .section__title { color: #fff; }
+    .categories-section .section__subtitle { color: rgba(255,255,255,0.6); }
+
+    .help-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .help-card {
+      position: relative;
+      background: linear-gradient(145deg, #1a0808, #2a0f0f);
+      border: 1px solid rgba(139,28,28,0.25);
+      border-radius: 20px;
+      padding: 36px 28px 28px;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+      overflow: hidden;
+      transition: transform 0.25s ease, border-color 0.25s, box-shadow 0.25s;
+    }
+    .help-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(139,28,28,0.15), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+      border-radius: 20px;
+    }
+    .help-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(201,160,32,0.4);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+    }
+    .help-card:hover::before { opacity: 1; }
+    .help-card__glow {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(139,28,28,0.25), transparent 70%);
+      transform: translate(30px, -30px);
+    }
+    .help-card__icon {
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+      display: block;
+      position: relative;
+    }
+    .help-card__tag {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #C9A020;
+      margin-bottom: 10px;
+      display: block;
+      position: relative;
+    }
+    .help-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 12px;
+      line-height: 1.3;
+      position: relative;
+    }
+    .help-card p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.65;
+      margin: 0 0 20px;
+      position: relative;
+    }
+    .help-card__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #C9A020;
+      text-decoration: none;
+      position: relative;
+      transition: gap 0.2s;
+    }
+    .help-card:hover .help-card__cta { gap: 10px; }
+    .help-card__cta::after { content: '→'; }
+
+    /* ── IMMEDIATE HELP STRIP ── */
+    .urgent-strip {
+      background: linear-gradient(135deg, #8B1C1C, #6B1414);
+      padding: 40px 0;
+    }
+    .urgent-strip__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .urgent-strip__text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .urgent-strip__text p { color: rgba(255,255,255,0.8); font-size: 0.95rem; margin: 0; }
+    .urgent-strip__actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .urgent-btn {
+      display: inline-block;
+      padding: 13px 26px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .urgent-btn--white { background: #fff; color: #8B1C1C; }
+    .urgent-btn--outline { background: transparent; border: 2px solid rgba(255,255,255,0.5); color: #fff; }
+    .urgent-btn:hover { transform: translateY(-2px); }
+
+    /* ── HOW WE HELP ── */
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+    .how-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      transition: transform 0.2s;
+    }
+    .how-card:hover { transform: translateY(-4px); }
+    .how-card__icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, rgba(139,28,28,0.1), rgba(201,160,32,0.1));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 1.5rem;
+    }
+    .how-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1a1a2e;
+      margin-bottom: 8px;
+    }
+    .how-card p {
+      font-size: 0.87rem;
+      color: #666;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* ── TESTIMONIAL ── */
+    .help-testimonial {
+      background: linear-gradient(135deg, #1a1a2e 0%, #2d1515 100%);
+      padding: 80px 0;
+      text-align: center;
+    }
+    .help-testimonial blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+      color: #fff;
+      max-width: 720px;
+      margin: 0 auto 24px;
+      line-height: 1.6;
+      font-style: italic;
+    }
+    .help-testimonial cite {
+      font-size: 0.88rem;
+      color: #C9A020;
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    @media (max-width: 900px) {
+      .help-grid { grid-template-columns: repeat(2, 1fr); }
+      .urgent-strip__inner { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 560px) {
+      .help-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="mainNav">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="logo/Overcomers Church World Outreach logo.jpg" alt="OCWO" class="nav__logo-mark" style="object-fit:cover;background:transparent;border-radius:50%;">
+        <div>
+          <div class="nav__logo-text">Overcomers Church</div>
+          <div class="nav__logo-sub">World Outreach</div>
+        </div>
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="about.html">About</a></li>
+        <li><a href="beliefs.html">Beliefs</a></li>
+        <li><a href="ministries.html">Ministries</a></li>
+        <li><a href="sermons.html">Sermons</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="find-help.html" class="active">Find Help</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="give.html" class="nav__cta">Give</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="help-hero">
+    <div class="container" style="position:relative;">
+      <div class="help-hero__badge">You Are Not Alone</div>
+      <h1>Whatever You're Facing,<br><em>There Is Hope.</em></h1>
+      <p>Life can be hard — but you don't have to walk through it alone. At Overcomers Church World Outreach, we believe God's grace is sufficient for every situation you face.</p>
+      <div class="help-hero__scripture">
+        "Cast all your anxiety on him because he cares for you." <strong>— 1 Peter 5:7</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO STRIP -->
+  <div class="intro-strip">
+    <div class="container">
+      <p>Whether you're walking through a painful season, searching for direction, or simply need someone to pray with you — <strong>our doors are open and our pastors are available</strong>. Select the area of your life where you need help below, and we'll point you to the right resource, sermon, or support.</p>
+    </div>
+  </div>
+
+  <!-- URGENT HELP STRIP -->
+  <div class="urgent-strip">
+    <div class="container urgent-strip__inner">
+      <div class="urgent-strip__text">
+        <h3>Need Help Right Now?</h3>
+        <p>Our pastoral team is available. Don't wait — reach out today. Nigeria emergency: 199 / 112</p>
+      </div>
+      <div class="urgent-strip__actions">
+        <a href="tel:+2348000000000" class="urgent-btn urgent-btn--white">📞 Call the Church</a>
+        <a href="https://wa.me/2348000000000" target="_blank" rel="noopener" class="urgent-btn urgent-btn--outline">💬 WhatsApp a Pastor</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORIES GRID -->
+  <section class="categories-section">
+    <div class="container">
+      <div class="section__header reveal" style="text-align:center;">
+        <span class="section__tag">We're Here For You</span>
+        <h2 class="section__title">What Are You Going Through?</h2>
+        <p class="section__subtitle">Select a category to find scriptures, sermons, prayer support, and pastoral care tailored to your situation.</p>
+      </div>
+
+      <div class="help-grid">
+
+        <!-- 1 -->
+        <a href="find-help-detail.html" class="help-card reveal">
+          <div class="help-card__glow"></div>
+          <span class="help-card__icon">💔</span>
+          <span class="help-card__tag">Pain & Suffering</span>
+          <h3>When You're Hurting</h3>
+          <p>Grief, heartbreak, illness, loneliness, or trauma. Find comfort, healing scriptures, and pastoral care for the pain you carry.</p>
+          <span class="help-card__cta">Find Comfort</span>
+        </a>
+
+        <!-- 2 -->
+        <a href="find-help-detail.html" class="help-card reveal">
+          <div class="help-card__glow"></div>
+          <span class="help-card__icon">🧠</span>
+          <span class="help-card__tag">Mental Health</span>
+          <h3>When Your Mind Is Full</h3>
+          <p>Anxiety, depression, overwhelming thoughts, burnout, or fear. There is no shame in struggling. God meets you in the silence.</p>
+          <span class="help-card__cta">Find Peace</span>
+        </a>
+
+        <!-- 3 -->
+        <a href="find-help-detail.html" class="help-card reveal">
+          <div class="help-card__glow"></div>
+          <span class="help-card__icon">🧭</span>
+          <span class="help-card__tag">Purpose & Identity</span>
+          <h3>When You Feel Lost</h3>
+          <p>Confusion about direction, identity, calling, or purpose. Discover who God says you are — an overcomer, not a wanderer.</p>
+          <span class="help-card__cta">Find Direction</span>
+        </a>
+
+        <!-- 4 -->
+        <a href="find-help-detail.html" class="help-card reveal">
+          <div class="help-card__glow"></div>
+          <span class="help-card__icon">🕊️</span>
+          <span class="help-card__tag">Loss & Bereavement</span>
+          <h3>When You're Grieving</h3>
+          <p>The loss of a loved one, a relationship, or a season of life. Our bereavement support team and pastoral counsellors are here.</p>
+          <span class="help-card__cta">Find Healing</span>
+        </a>
+
+        <!-- 5 -->
+        <a href="find-help-detail.html" class="help-card reveal">
+          <div class="help-card__glow"></div>
+          <span class="help-card__icon">👨‍👩‍👧</span>
+          <span class="help-card__tag">Marriage & Family</span>
+          <h3>When Your Family is Breaking</h3>
+          <p>Marital conflict, parenting stress, separation, or family dysfunction. God restores what the enemy tries to destroy.</p>
+          <span class="help-card__cta">Find Restoration</span>
+        </a>
+
+        <!-- 6 -->
+        <a href="find-help-detail.html" class="help-card reveal">
+          <div class="help-card__glow"></div>
+          <span class="help-card__icon">⛓️</span>
+          <span class="help-card__tag">Deliverance</span>
+          <h3>When You Need Breakthrough</h3>
+          <p>Spiritual oppression, generational patterns, stubborn situations that won't yield. We believe in the power of God to break every chain.</p>
+          <span class="help-card__cta">Find Freedom</span>
+        </a>
+
+        <!-- 7 -->
+        <a href="find-help-detail.html" class="help-card reveal">
+          <div class="help-card__glow"></div>
+          <span class="help-card__icon">💼</span>
+          <span class="help-card__tag">Provision & Finance</span>
+          <h3>When You're Struggling Financially</h3>
+          <p>Job loss, debt, business failure, or financial pressure. God is Jehovah Jireh — your provider. Practical help and prayer available.</p>
+          <span class="help-card__cta">Find Provision</span>
+        </a>
+
+        <!-- 8 -->
+        <a href="find-help-detail.html" class="help-card reveal">
+          <div class="help-card__glow"></div>
+          <span class="help-card__icon">🔗</span>
+          <span class="help-card__tag">Addiction & Recovery</span>
+          <h3>When You're Dealing with Addiction</h3>
+          <p>Substance abuse, alcohol, pornography, or any compulsive habit. True freedom is possible. We walk alongside you without judgment.</p>
+          <span class="help-card__cta">Find Recovery</span>
+        </a>
+
+        <!-- 9 -->
+        <a href="find-help-detail.html" class="help-card reveal">
+          <div class="help-card__glow"></div>
+          <span class="help-card__icon">✨</span>
+          <span class="help-card__tag">New Life in Christ</span>
+          <h3>When You Need Salvation</h3>
+          <p>Ready to begin a relationship with Jesus? No past too dark, no sin too great. Today can be the beginning of your new story.</p>
+          <span class="help-card__cta">Meet Jesus</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE HELP -->
+  <section class="section" style="background:#fafafa;">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__tag">Our Support</span>
+        <h2 class="section__title">How We Walk With You</h2>
+        <p class="section__subtitle">OCWO offers multiple layers of care — from prayer and community to professional counselling referrals.</p>
+      </div>
+      <div class="how-grid">
+        <div class="how-card reveal">
+          <div class="how-card__icon">🙏</div>
+          <h3>Prayer Ministry</h3>
+          <p>Our intercessory prayer team prays over every submitted request. Prayer changes things — and we take every request seriously.</p>
+        </div>
+        <div class="how-card reveal">
+          <div class="how-card__icon">👨‍⚕️</div>
+          <h3>Pastoral Counselling</h3>
+          <p>Request a private session with one of our pastoral counsellors. We offer a safe, confidential space with no judgment.</p>
+        </div>
+        <div class="how-card reveal">
+          <div class="how-card__icon">🏠</div>
+          <h3>Home Cell Groups</h3>
+          <p>Connect with a small group of believers in your neighbourhood. Real life, real community — where you know and are known.</p>
+        </div>
+        <div class="how-card reveal">
+          <div class="how-card__icon">📖</div>
+          <h3>Sermon Library</h3>
+          <p>Access hundreds of messages on healing, breakthrough, faith, and family from our sermons archive. The Word has the answer.</p>
+        </div>
+        <div class="how-card reveal">
+          <div class="how-card__icon">🤝</div>
+          <h3>Community Outreach</h3>
+          <p>Our outreach team provides food, clothing, and emergency support to those in need in Okota and surrounding communities.</p>
+        </div>
+        <div class="how-card reveal">
+          <div class="how-card__icon">🔗</div>
+          <h3>Professional Referrals</h3>
+          <p>For clinical mental health, legal, or medical needs, we connect you with trusted Christian professionals in Lagos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <div class="help-testimonial">
+    <div class="container">
+      <blockquote class="reveal">
+        "I came to Overcomers at the lowest point of my life — divorce, job loss, depression. The pastors prayed with me, the community held me, and God met me there. Two years later, I'm restored. OCWO didn't just give me a church — they gave me back my life."
+      </blockquote>
+      <cite class="reveal">— Adaeze M., Lagos</cite>
+    </div>
+  </div>
+
+  <!-- FINAL CTA -->
+  <section class="section" style="text-align:center;">
+    <div class="container">
+      <div class="reveal">
+        <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.6rem);color:#1a1a2e;margin-bottom:16px;">You Don't Have to Face This Alone</h2>
+        <p style="color:#666;font-size:1.05rem;max-width:520px;margin:0 auto 36px;line-height:1.7;">Take the next step. Talk to a pastor, submit a prayer request, or plan your first visit. We are here for you.</p>
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+          <a href="contact.html" class="btn btn--primary">Talk to a Pastor</a>
+          <a href="plan-visit.html" class="btn btn--outline">Plan My Visit</a>
+          <a href="sermons.html" class="btn btn--outline">Browse Sermons</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo">
+          <img src="logo/Overcomers Church World Outreach logo.jpg" alt="" style="width:36px;height:36px;border-radius:50%;object-fit:cover;margin-right:4px;">
+          <span class="footer__logo-name">Overcomers Church World Outreach</span>
+        </a>
+        <p class="footer__tagline">We Are More Than Conquerors Through Him That Loved Us.</p>
+        <div class="footer__socials">
+          <a href="https://www.facebook.com/OvercomersGrace" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/overcomersgrace" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.youtube.com/channel/UChNzaaQHWECdO50IFASv7bw" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__heading">Service Times</h4>
+        <div class="footer__service-time"><span>Sunday Service</span><span>8:00am</span></div>
+        <div class="footer__service-time"><span>Wednesday Midweek</span><span>6:00pm</span></div>
+        <div class="footer__service-time"><span>Youth (Fridays)</span><span>5:00pm</span></div>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__heading">Get Help</h4>
+        <ul class="footer__links">
+          <li><a href="find-help-detail.html">When You're Hurting</a></li>
+          <li><a href="find-help-detail.html">Mental Health Support</a></li>
+          <li><a href="find-help-detail.html">Family & Marriage</a></li>
+          <li><a href="find-help-detail.html">Breakthrough & Deliverance</a></li>
+          <li><a href="contact.html">Talk to a Pastor</a></li>
+          <li><a href="contact.html">Submit Prayer Request</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__heading">Contact</h4>
+        <address class="footer__address">
+          Okota Road, Okota<br>
+          Lagos, Nigeria<br><br>
+          <a href="tel:+2348000000000">+234 800 000 0000</a><br>
+          <a href="mailto:info@overcomersworldoutreach.org">info@overcomersworldoutreach.org</a>
+        </address>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p>© 2026 Overcomers Church World Outreach. All rights reserved.</p>
+        <p style="font-size:0.8rem;color:#999;margin-top:4px;">If you are in crisis, please call Nigeria emergency services: 199 or 112</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/2348000000000" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

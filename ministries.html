@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore the ministries of Overcomers Church World Outreach — Ignite Youth, Women of Virtue, Men of Valour, Children's Ministry, and more." />
+  <title>Ministries — Overcomers Church World Outreach</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .ministry-card { background:white; border-radius:var(--radius-xl); overflow:hidden; border:1px solid var(--color-border-light); box-shadow:var(--shadow-sm); transition:box-shadow var(--transition-base),transform var(--transition-base); display:flex; flex-direction:column; }
+    .ministry-card:hover { box-shadow:var(--shadow-md); transform:translateY(-4px); }
+    .ministry-card__image { height:220px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+    .ministry-card__body { padding:28px; flex:1; display:flex; flex-direction:column; }
+    .ministry-card__tag { display:inline-block; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--color-accent); background:var(--color-accent-subtle); padding:4px 10px; border-radius:var(--radius-full); margin-bottom:12px; }
+    .ministry-card__title { font-family:var(--font-heading); font-size:22px; font-weight:700; color:var(--color-primary); margin-bottom:10px; }
+    .ministry-card__desc { font-size:14px; color:var(--color-text-soft); line-height:1.75; flex:1; margin-bottom:20px; }
+    .ministry-card__meta { font-size:12px; color:var(--color-muted); display:flex; gap:12px; flex-wrap:wrap; margin-bottom:16px; }
+    .involve-step { display:flex; gap:20px; align-items:flex-start; padding:24px; background:white; border-radius:var(--radius-xl); border:1px solid var(--color-border-light); }
+    .involve-step__num { width:48px; height:48px; background:var(--color-primary); color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(--font-heading); font-weight:800; font-size:20px; flex-shrink:0; }
+    .involve-step__title { font-weight:700; font-size:16px; color:var(--color-primary); margin-bottom:6px; }
+    .involve-step__text { font-size:14px; color:var(--color-text-soft); line-height:1.7; }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="main-nav" style="background:transparent;position:fixed;" data-transparent="true">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="logo/Overcomers Church World Outreach logo.jpg" alt="OCWO" class="nav__logo-mark" style="object-fit:cover;background:transparent;border-radius:50%;">
+        <div>
+          <div class="nav__logo-text">Overcomers Church</div>
+          <div class="nav__logo-sub">World Outreach</div>
+        </div>
+      </a>
+      <ul class="nav__links">
+        <li><a href="about.html" class="nav__link">About</a></li>
+        <li><a href="sermons.html" class="nav__link">Sermons</a></li>
+        <li><a href="ministries.html" class="nav__link nav__link--active">Ministries</a></li>
+        <li><a href="events.html" class="nav__link">Events</a></li>
+        <li><a href="find-help.html" class="nav__link nav__link--find-help">Find Help</a></li>
+        <li><a href="contact.html" class="nav__link">Contact</a></li>
+      </ul>
+      <div class="nav__actions">
+        <a href="give.html" class="btn btn--secondary btn--sm">Give</a>
+        <a href="plan-visit.html" class="btn btn--primary btn--sm">Plan a Visit</a>
+        <button class="nav__menu-btn" id="menu-btn"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobile-nav">
+    <button class="mobile-nav__close" id="mobile-nav-close">✕</button>
+    <ul class="mobile-nav__links">
+      <li><a href="index.html" class="mobile-nav__link">Home</a></li>
+      <li><a href="about.html" class="mobile-nav__link">About</a></li>
+      <li><a href="ministries.html" class="mobile-nav__link">Ministries</a></li>
+      <li><a href="sermons.html" class="mobile-nav__link">Sermons</a></li>
+      <li><a href="events.html" class="mobile-nav__link">Events</a></li>
+      <li><a href="find-help.html" class="mobile-nav__link mobile-nav__link--find-help">Find Help</a></li>
+      <li><a href="plan-visit.html" class="mobile-nav__link">Plan a Visit</a></li>
+      <li><a href="give.html" class="mobile-nav__link">Give</a></li>
+      <li><a href="contact.html" class="mobile-nav__link">Contact</a></li>
+    </ul>
+  </div>
+
+  <main>
+
+    <div class="page-hero">
+      <span class="page-hero__label">Get Involved</span>
+      <h1 class="page-hero__title">Where Do You Belong?</h1>
+      <p class="page-hero__subtitle">
+        From children to seniors, every person has a place at Overcomers Church World Outreach.
+        Find your community, discover your purpose, and grow as a champion.
+      </p>
+    </div>
+
+    <!-- Intro -->
+    <section class="section">
+      <div class="container">
+        <div style="max-width:760px;margin:0 auto;text-align:center;" class="reveal">
+          <p style="font-size:19px;line-height:1.85;color:var(--color-text-soft);">
+            Ministry at OCWO is not a program — it's family. Our ministries exist to help you find
+            a circle where you are truly known, equipped for your calling, and connected to something
+            bigger than yourself. Every ministry is Spirit-led and purpose-driven.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ministry Cards -->
+    <section class="section section--warm">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <span class="section-header__label">Our Communities</span>
+          <h2>Ministries for Every Season of Life</h2>
+        </div>
+
+        <div class="grid grid-3 reveal" style="gap:28px;">
+
+          <!-- Children -->
+          <div class="ministry-card">
+            <div class="ministry-card__image" style="background:#C9A020;">
+              <img src="images/ministry-children.jpg" alt="Children's Ministry" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'" />
+            </div>
+            <div class="ministry-card__body">
+              <span class="ministry-card__tag">Ages 0–12</span>
+              <div class="ministry-card__title">Children's Ministry</div>
+              <p class="ministry-card__desc">A safe, joyful, Spirit-filled environment where children discover that God loves them, knows them by name, and has powerful plans for their lives. Every Sunday during the main service.</p>
+              <div class="ministry-card__meta">
+                <span>🕗 During Sunday Service</span>
+                <span>📍 Children's Wing, OCWO</span>
+              </div>
+              <a href="contact.html" class="btn btn--primary btn--sm">Get Involved</a>
+            </div>
+          </div>
+
+          <!-- Youth: Ignite -->
+          <div class="ministry-card">
+            <div class="ministry-card__image" style="background:#8B1C1C;">
+              <img src="images/ministry-youth.jpg" alt="Ignite Youth Ministry" style="width:100%;height:100%;object-fit:cover;opacity:0.9;" onerror="this.style.display='none'" />
+            </div>
+            <div class="ministry-card__body">
+              <span class="ministry-card__tag">Ages 13–25</span>
+              <div class="ministry-card__title">Ignite Youth Ministry</div>
+              <p class="ministry-card__desc">A generation-defining ministry built for young people who want faith that is real, relationships that are genuine, and purpose beyond success. High-energy, Spirit-led, and honest. Every Friday and Sunday.</p>
+              <div class="ministry-card__meta">
+                <span>🔥 Fridays, 5:00pm</span>
+                <span>📍 Youth Hall, OCWO</span>
+              </div>
+              <a href="contact.html" class="btn btn--primary btn--sm">Get Involved</a>
+            </div>
+          </div>
+
+          <!-- Women: Women of Virtue -->
+          <div class="ministry-card">
+            <div class="ministry-card__image" style="background:#9E7BB5;">
+              <img src="images/ministry-women.jpg" alt="Women of Virtue Ministry" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'" />
+            </div>
+            <div class="ministry-card__body">
+              <span class="ministry-card__tag">Women's Ministry</span>
+              <div class="ministry-card__title">Women of Virtue</div>
+              <p class="ministry-card__desc">A space where women are fully known, deeply encouraged, and spiritually empowered. From prayer meetings to retreats, from Bible studies to community support — this ministry transforms lives.</p>
+              <div class="ministry-card__meta">
+                <span>📅 Bi-weekly Saturdays</span>
+                <span>📍 Conference Room, OCWO</span>
+              </div>
+              <a href="contact.html" class="btn btn--primary btn--sm">Get Involved</a>
+            </div>
+          </div>
+
+          <!-- Men: Men of Valour -->
+          <div class="ministry-card">
+            <div class="ministry-card__image" style="background:#2D4A2D;">
+              <img src="images/ministry-men.jpg" alt="Men of Valour Ministry" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'" />
+            </div>
+            <div class="ministry-card__body">
+              <span class="ministry-card__tag">Men's Ministry</span>
+              <div class="ministry-card__title">Men of Valour</div>
+              <p class="ministry-card__desc">Real men talking about real things. Brotherhood, accountability, and purpose-driven faith. Built around the Word of God, prayer, and honest conversation about what it means to lead as a Nigerian man of God.</p>
+              <div class="ministry-card__meta">
+                <span>🕖 Saturdays, 6:30am</span>
+                <span>📍 Fellowship Hall, OCWO</span>
+              </div>
+              <a href="contact.html" class="btn btn--primary btn--sm">Get Involved</a>
+            </div>
+          </div>
+
+          <!-- Marriage & Family -->
+          <div class="ministry-card">
+            <div class="ministry-card__image" style="background:#C9A020;">
+              <img src="images/ministry-family.jpg" alt="Marriage and Family Ministry" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'" />
+            </div>
+            <div class="ministry-card__body">
+              <span class="ministry-card__tag">Families</span>
+              <div class="ministry-card__title">Marriage &amp; Family Ministry</div>
+              <p class="ministry-card__desc">Equipping couples and families to build homes rooted in love, faith, and God's Word. Counselling, seminars, enrichment retreats, and home groups for couples at every stage of life.</p>
+              <div class="ministry-card__meta">
+                <span>📅 Monthly gatherings</span>
+                <span>📍 OCWO Various Venues</span>
+              </div>
+              <a href="contact.html" class="btn btn--primary btn--sm">Get Involved</a>
+            </div>
+          </div>
+
+          <!-- Worship & Creative Arts -->
+          <div class="ministry-card">
+            <div class="ministry-card__image" style="background:#3A1B5C;">
+              <img src="images/ministry-worship.jpg" alt="Worship and Creative Arts Ministry" style="width:100%;height:100%;object-fit:cover;opacity:0.88;" onerror="this.style.display='none'" />
+            </div>
+            <div class="ministry-card__body">
+              <span class="ministry-card__tag">Creative Arts</span>
+              <div class="ministry-card__title">Worship &amp; Creative Arts</div>
+              <p class="ministry-card__desc">For musicians, vocalists, sound engineers, media team, and visual artists who want to use their gifts to create encounters with God. Excellence and anointing — for an audience of One.</p>
+              <div class="ministry-card__meta">
+                <span>📅 Wednesdays, 5:00pm</span>
+                <span>📍 Main Sanctuary, OCWO</span>
+              </div>
+              <a href="contact.html" class="btn btn--primary btn--sm">Audition / Join</a>
+            </div>
+          </div>
+
+          <!-- Community Outreach -->
+          <div class="ministry-card">
+            <div class="ministry-card__image" style="background:#1B4A2A;">
+              <img src="images/ministry-outreach.jpg" alt="Community Outreach Ministry" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'" />
+            </div>
+            <div class="ministry-card__body">
+              <span class="ministry-card__tag">Outreach</span>
+              <div class="ministry-card__title">Community Outreach</div>
+              <p class="ministry-card__desc">Taking God's love beyond our walls into Okota, Isolo, and surrounding Lagos communities. Food distribution, school support, neighbourhood evangelism, and practical compassion that demonstrates the Gospel.</p>
+              <div class="ministry-card__meta">
+                <span>📅 Saturdays monthly</span>
+                <span>📍 Lagos-wide</span>
+              </div>
+              <a href="contact.html" class="btn btn--primary btn--sm">Volunteer</a>
+            </div>
+          </div>
+
+          <!-- Golden Years (Seniors) -->
+          <div class="ministry-card">
+            <div class="ministry-card__image" style="background:#4A7FB5;">
+              <img src="images/ministry-seniors.jpg" alt="Golden Years Ministry" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'" />
+            </div>
+            <div class="ministry-card__body">
+              <span class="ministry-card__tag">55+</span>
+              <div class="ministry-card__title">Golden Years Ministry</div>
+              <p class="ministry-card__desc">Celebrating the wisdom, stories, and faith of our senior members. Fellowship, visitation programs, Bible study, and a community that honours every season of life with dignity and love.</p>
+              <div class="ministry-card__meta">
+                <span>📅 Thursdays, 11:00am</span>
+                <span>📍 Fellowship Hall, OCWO</span>
+              </div>
+              <a href="contact.html" class="btn btn--primary btn--sm">Get Involved</a>
+            </div>
+          </div>
+
+          <!-- Home Cell Groups -->
+          <div class="ministry-card">
+            <div class="ministry-card__image" style="background:#5C3A1B;">
+              <img src="images/ministry-cells.jpg" alt="Home Cell Groups" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'" />
+            </div>
+            <div class="ministry-card__body">
+              <span class="ministry-card__tag">Small Groups</span>
+              <div class="ministry-card__title">Home Cell Groups</div>
+              <p class="ministry-card__desc">The church is not just a building — it is also a living room. Home Cell Groups meet weekly across Lagos to study Scripture, pray together, and do life in true community. Groups for every life stage.</p>
+              <div class="ministry-card__meta">
+                <span>📅 Various days &amp; times</span>
+                <span>📍 Across Lagos</span>
+              </div>
+              <a href="contact.html" class="btn btn--primary btn--sm">Find a Cell</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Scripture Banner -->
+    <div class="scripture-banner">
+      <p class="scripture-banner__text">
+        "And they continued steadfastly in the apostles' doctrine and fellowship,<br>
+        in the breaking of bread, and in prayers."
+      </p>
+      <p class="scripture-banner__ref">Acts 2:42</p>
+    </div>
+
+    <!-- How to Get Involved -->
+    <section class="section">
+      <div class="container">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+          <div class="reveal">
+            <span class="section-header__label">Your First Step</span>
+            <h2 style="margin-bottom:20px;">How to Get Plugged In</h2>
+            <p style="font-size:17px;line-height:1.9;color:var(--color-text-soft);margin-bottom:32px;">
+              Finding your place at OCWO shouldn't be complicated. Here's how we help every new person
+              discover where they truly belong.
+            </p>
+            <div style="display:flex;flex-direction:column;gap:16px;">
+              <div class="involve-step">
+                <div class="involve-step__num">1</div>
+                <div>
+                  <div class="involve-step__title">Visit on a Sunday</div>
+                  <p class="involve-step__text">Come to a service and experience the community. No pressure — just come and encounter God at 8:00am in Okota.</p>
+                </div>
+              </div>
+              <div class="involve-step">
+                <div class="involve-step__num">2</div>
+                <div>
+                  <div class="involve-step__title">Attend Newcomers' Connect</div>
+                  <p class="involve-step__text">Our monthly newcomers' gathering helps you find your fit. Meet the team, explore the ministries, and ask all your questions.</p>
+                </div>
+              </div>
+              <div class="involve-step">
+                <div class="involve-step__num">3</div>
+                <div>
+                  <div class="involve-step__title">Join a Home Cell Group</div>
+                  <p class="involve-step__text">Real community happens in small groups. We'll match you with a Home Cell based on your area of Lagos and life stage.</p>
+                </div>
+              </div>
+              <div class="involve-step">
+                <div class="involve-step__num">4</div>
+                <div>
+                  <div class="involve-step__title">Discover Your Gifts</div>
+                  <p class="involve-step__text">Meet with a team leader to find where you can serve. Every member is equipped and deployed for God's Kingdom work.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <div style="background:linear-gradient(160deg,#3D0A0A,#8B1C1C);border-radius:var(--radius-2xl);padding:48px;text-align:center;">
+              <div style="font-size:64px;margin-bottom:20px;">🙋</div>
+              <h3 style="color:white;font-size:28px;margin-bottom:16px;">Ready to Serve?</h3>
+              <p style="color:rgba(255,255,255,0.65);font-size:16px;line-height:1.7;margin-bottom:28px;">
+                We have volunteer opportunities in every area — from welcoming first-time visitors
+                to serving the community, running media, or teaching children.
+              </p>
+              <a href="contact.html" class="btn btn--white btn--lg" style="width:100%;justify-content:center;margin-bottom:12px;">I Want to Volunteer</a>
+              <a href="plan-visit.html" class="btn btn--ghost btn--lg" style="width:100%;justify-content:center;">Plan a Visit First</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section--warm" style="text-align:center;">
+      <div class="container reveal">
+        <div style="max-width:560px;margin:0 auto;">
+          <h2 style="margin-bottom:16px;">Not Sure Where You Fit?</h2>
+          <p style="font-size:17px;color:var(--color-muted);line-height:1.7;margin-bottom:32px;">
+            Reach out to us directly. We'll listen and help you find exactly where you belong at OCWO.
+          </p>
+          <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+            <a href="contact.html" class="btn btn--primary btn--lg">Talk to Someone</a>
+            <a href="events.html" class="btn btn--secondary btn--lg">See Upcoming Events</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo">
+            <img src="logo/Overcomers Church World Outreach logo.jpg" alt="" style="width:36px;height:36px;border-radius:50%;object-fit:cover;margin-right:4px;">
+            <span class="footer__logo-name">Overcomers Church World Outreach</span>
+          </a>
+          <p class="footer__tagline">Raising champions for God's Kingdom — in Lagos, across Nigeria, and around the world.</p>
+          <div class="footer__service-times">
+            <div class="footer__service-time"><span>Sunday Service</span><span>8:00am</span></div>
+            <div class="footer__service-time"><span>Wednesday Midweek</span><span>6:00pm</span></div>
+            <div class="footer__service-time"><span>Youth (Fridays)</span><span>5:00pm</span></div>
+          </div>
+        </div>
+        <div><h4 class="footer__col-title">Explore</h4><ul class="footer__links"><li><a href="about.html" class="footer__link">About Us</a></li><li><a href="beliefs.html" class="footer__link">Our Beliefs</a></li><li><a href="ministries.html" class="footer__link">Ministries</a></li><li><a href="sermons.html" class="footer__link">Sermons</a></li><li><a href="find-help.html" class="footer__link">Find Help</a></li></ul></div>
+        <div><h4 class="footer__col-title">Connect</h4><ul class="footer__links"><li><a href="plan-visit.html" class="footer__link">Plan a Visit</a></li><li><a href="give.html" class="footer__link">Give Online</a></li><li><a href="contact.html#prayer" class="footer__link">Prayer Request</a></li><li><a href="contact.html" class="footer__link">Contact Us</a></li></ul></div>
+        <div><h4 class="footer__col-title">Find Us</h4><ul class="footer__links"><li><span class="footer__link" style="cursor:default;color:rgba(255,255,255,0.55);">Okota Road, Okota,<br>Lagos, Nigeria</span></li><li style="margin-top:8px;"><a href="tel:+2348000000000" class="footer__link">+234 800 000 0000</a></li><li><a href="mailto:info@overcomersworldoutreach.org" class="footer__link">info@overcomersworldoutreach.org</a></li></ul></div>
+      </div>
+      <div class="footer__bottom"><p>© 2026 Overcomers Church World Outreach. All rights reserved.</p><div style="display:flex;gap:16px;"><a href="#" class="footer__link" style="font-size:13px;">Privacy</a><a href="#" class="footer__link" style="font-size:13px;">Terms</a></div></div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/[CHURCH_WHATSAPP_NUMBER]" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="white"/></svg>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

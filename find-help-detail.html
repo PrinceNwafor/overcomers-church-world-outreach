@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>When You're Hurting | Find Help | Overcomers Church World Outreach</title>
+  <meta name="description" content="You don't have to carry the pain alone. Find healing scriptures, sermons, and pastoral support for grief, illness, heartbreak, and trauma at OCWO.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── HERO ── */
+    .detail-hero {
+      background: linear-gradient(160deg, #0d0505 0%, #1e0808 40%, #3D0A0A 100%);
+      padding: 120px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .detail-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 20% 50%, rgba(139,28,28,0.25) 0%, transparent 60%);
+    }
+    .detail-hero__breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 28px;
+      position: relative;
+    }
+    .detail-hero__breadcrumb a { color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+    .detail-hero__breadcrumb a:hover { color: #C9A020; }
+    .detail-hero__breadcrumb span { color: rgba(255,255,255,0.25); }
+    .detail-hero__icon {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      display: block;
+      position: relative;
+    }
+    .detail-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      color: #fff;
+      margin-bottom: 20px;
+      line-height: 1.2;
+      position: relative;
+    }
+    .detail-hero p {
+      color: rgba(255,255,255,0.72);
+      font-size: 1.1rem;
+      max-width: 580px;
+      line-height: 1.75;
+      position: relative;
+      margin-bottom: 0;
+    }
+
+    /* ── SUB-TOPIC CHIPS ── */
+    .subtopic-bar {
+      background: #fff;
+      padding: 0;
+      border-bottom: 1px solid #eee;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .subtopic-bar__inner {
+      display: flex;
+      gap: 4px;
+      padding: 14px 0;
+    }
+    .subtopic-chip {
+      display: inline-block;
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      background: transparent;
+      border: 1px solid #e0e0e0;
+      color: #555;
+      transition: all 0.2s;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    .subtopic-chip.active,
+    .subtopic-chip:hover {
+      background: #8B1C1C;
+      border-color: #8B1C1C;
+      color: #fff;
+    }
+
+    /* ── MAIN LAYOUT ── */
+    .detail-layout {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* ── SCRIPTURE COMFORT ── */
+    .scripture-comfort {
+      background: linear-gradient(135deg, #8B1C1C 0%, #6B1414 100%);
+      border-radius: 20px;
+      padding: 40px 36px;
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .scripture-comfort::before {
+      content: '"';
+      position: absolute;
+      top: -20px;
+      left: 20px;
+      font-size: 14rem;
+      color: rgba(255,255,255,0.05);
+      font-family: 'Playfair Display', serif;
+      line-height: 1;
+    }
+    .scripture-comfort blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      color: #fff;
+      font-style: italic;
+      line-height: 1.65;
+      margin: 0 0 16px;
+      position: relative;
+    }
+    .scripture-comfort cite {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #C9A020;
+      font-style: normal;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .scripture-tabs {
+      display: flex;
+      gap: 8px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+    .scripture-tab {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.75);
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 0.78rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .scripture-tab.active,
+    .scripture-tab:hover {
+      background: rgba(201,160,32,0.25);
+      border-color: #C9A020;
+      color: #C9A020;
+    }
+
+    /* ── HEALING PATHWAY ── */
+    .pathway-steps {
+      margin-bottom: 40px;
+    }
+    .pathway-step {
+      display: flex;
+      gap: 20px;
+      padding: 24px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .pathway-step:last-child { border-bottom: none; }
+    .pathway-step__num {
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      background: rgba(139,28,28,0.08);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #8B1C1C;
+    }
+    .pathway-step h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #1a1a2e;
+      margin-bottom: 4px;
+    }
+    .pathway-step p {
+      font-size: 0.88rem;
+      color: #666;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* ── SERMON RECOMMENDATIONS ── */
+    .sermon-rec-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 40px; }
+    .sermon-rec {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 14px;
+      padding: 18px 20px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+    }
+    .sermon-rec:hover {
+      border-color: #8B1C1C;
+      box-shadow: 0 4px 16px rgba(139,28,28,0.10);
+    }
+    .sermon-rec__play {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      background: #8B1C1C;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1rem;
+    }
+    .sermon-rec__info { flex: 1; }
+    .sermon-rec__category {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #8B1C1C;
+      margin-bottom: 3px;
+    }
+    .sermon-rec__title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #1a1a2e;
+      margin-bottom: 2px;
+    }
+    .sermon-rec__meta { font-size: 0.78rem; color: #999; }
+
+    /* ── SIDEBAR ── */
+    .sidebar-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px 24px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+      margin-bottom: 24px;
+    }
+    .sidebar-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #8B1C1C;
+    }
+    .sidebar-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid #f5f5f5;
+      text-decoration: none;
+      font-size: 0.88rem;
+      color: #444;
+      transition: color 0.2s;
+    }
+    .sidebar-link:last-child { border-bottom: none; }
+    .sidebar-link:hover { color: #8B1C1C; }
+    .sidebar-link__icon {
+      width: 32px;
+      height: 32px;
+      background: rgba(139,28,28,0.08);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    /* ── PRAYER FORM ── */
+    .prayer-form-section {
+      background: linear-gradient(135deg, #1a1a2e, #2d1515);
+      padding: 80px 0;
+    }
+    .prayer-form {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 48px 40px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 12px 16px;
+      color: #fff;
+      font-size: 0.95rem;
+      font-family: inherit;
+      transition: border-color 0.2s;
+      box-sizing: border-box;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #C9A020;
+    }
+    .form-group select option { background: #2d1515; }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .prayer-privacy {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.84rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 16px;
+      line-height: 1.5;
+    }
+    .prayer-privacy input { width: 18px; height: 18px; accent-color: #8B1C1C; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── PASTORAL CTA ── */
+    .pastoral-cta {
+      background: linear-gradient(135deg, #8B1C1C, #C9A020);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    .pastoral-cta h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .pastoral-cta p {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+    .pastoral-cta-btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── OTHER CATEGORIES ── */
+    .other-cats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .other-cat {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 20px 16px;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .other-cat:hover {
+      border-color: #8B1C1C;
+      box-shadow: 0 4px 16px rgba(139,28,28,0.10);
+      transform: translateY(-2px);
+    }
+    .other-cat__icon { font-size: 1.8rem; margin-bottom: 8px; display: block; }
+    .other-cat__title { font-size: 0.82rem; font-weight: 600; color: #1a1a2e; }
+
+    @media (max-width: 1024px) {
+      .detail-layout { grid-template-columns: 1fr; }
+      .other-cats { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .prayer-form { padding: 28px 20px; }
+      .other-cats { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="mainNav">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="logo/Overcomers Church World Outreach logo.jpg" alt="OCWO" class="nav__logo-mark" style="object-fit:cover;background:transparent;border-radius:50%;">
+        <div>
+          <div class="nav__logo-text">Overcomers Church</div>
+          <div class="nav__logo-sub">World Outreach</div>
+        </div>
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="about.html">About</a></li>
+        <li><a href="beliefs.html">Beliefs</a></li>
+        <li><a href="ministries.html">Ministries</a></li>
+        <li><a href="sermons.html">Sermons</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="find-help.html" class="active">Find Help</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="give.html" class="nav__cta">Give</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="detail-hero">
+    <div class="container" style="position:relative;">
+      <nav class="detail-hero__breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="find-help.html">Find Help</a>
+        <span>/</span>
+        <span style="color:rgba(255,255,255,0.65);">When You're Hurting</span>
+      </nav>
+      <span class="detail-hero__icon">💔</span>
+      <h1>When You're Hurting</h1>
+      <p>Pain is real. Whatever you're carrying — grief, illness, heartbreak, loneliness, or the weight of trauma — God sees you. And so do we. You are not invisible here.</p>
+    </div>
+  </section>
+
+  <!-- SUB-TOPIC CHIPS -->
+  <nav class="subtopic-bar">
+    <div class="container subtopic-bar__inner">
+      <a href="#" class="subtopic-chip active">All</a>
+      <a href="#" class="subtopic-chip">Grief & Loss</a>
+      <a href="#" class="subtopic-chip">Illness & Healing</a>
+      <a href="#" class="subtopic-chip">Heartbreak</a>
+      <a href="#" class="subtopic-chip">Loneliness</a>
+      <a href="#" class="subtopic-chip">Trauma</a>
+      <a href="#" class="subtopic-chip">Rejection</a>
+      <a href="#" class="subtopic-chip">Betrayal</a>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <section class="section" style="background:#fafafa;">
+    <div class="container">
+      <div class="detail-layout">
+
+        <!-- LEFT: MAIN CONTENT -->
+        <main>
+
+          <!-- SCRIPTURE COMFORT -->
+          <div class="scripture-comfort reveal">
+            <blockquote id="scriptureText">
+              "He heals the brokenhearted and binds up their wounds."
+            </blockquote>
+            <cite id="scriptureRef">— Psalm 147:3</cite>
+            <div class="scripture-tabs">
+              <button class="scripture-tab active" onclick="switchScripture(this, 'He heals the brokenhearted and binds up their wounds.', '— Psalm 147:3')">Psalm 147:3</button>
+              <button class="scripture-tab" onclick="switchScripture(this, 'The Lord is close to the brokenhearted and saves those who are crushed in spirit.', '— Psalm 34:18')">Psalm 34:18</button>
+              <button class="scripture-tab" onclick="switchScripture(this, 'Come to me, all you who are weary and burdened, and I will give you rest.', '— Matthew 11:28')">Matthew 11:28</button>
+              <button class="scripture-tab" onclick="switchScripture(this, 'Even though I walk through the darkest valley, I will fear no evil, for you are with me.', '— Psalm 23:4')">Psalm 23:4</button>
+              <button class="scripture-tab" onclick="switchScripture(this, 'He was despised and rejected by mankind, a man of suffering, and familiar with pain... he took up our pain and bore our suffering.', '— Isaiah 53:3-4')">Isaiah 53:3-4</button>
+            </div>
+          </div>
+
+          <!-- YOUR HEALING PATHWAY -->
+          <div class="reveal">
+            <h2 style="font-family:'Playfair Display',serif;font-size:1.7rem;color:#1a1a2e;margin-bottom:8px;">Your Path Toward Healing</h2>
+            <p style="color:#666;font-size:0.95rem;margin-bottom:24px;line-height:1.7;">There is no shortcut through pain — but you don't have to find your way alone. Here's how OCWO walks with you.</p>
+          </div>
+          <div class="pathway-steps reveal">
+            <div class="pathway-step">
+              <div class="pathway-step__num">1</div>
+              <div>
+                <h4>Acknowledge What You Feel</h4>
+                <p>God is not afraid of your pain, your anger, or your tears. David cried out to God in the Psalms. Jesus wept at Lazarus's tomb. Bring your real self — not a performance.</p>
+              </div>
+            </div>
+            <div class="pathway-step">
+              <div class="pathway-step__num">2</div>
+              <div>
+                <h4>Receive Prayer & Anointing</h4>
+                <p>James 5:14-15 says to call for the elders of the church to pray and anoint with oil. Our prayer team ministers healing prayer every Sunday after service — come forward.</p>
+              </div>
+            </div>
+            <div class="pathway-step">
+              <div class="pathway-step__num">3</div>
+              <div>
+                <h4>Talk to a Pastoral Counsellor</h4>
+                <p>Sometimes you need more than a prayer — you need someone who will listen. Our pastoral counsellors offer free, confidential sessions. Fill in the form below to book.</p>
+              </div>
+            </div>
+            <div class="pathway-step">
+              <div class="pathway-step__num">4</div>
+              <div>
+                <h4>Connect with Community</h4>
+                <p>Isolation deepens pain. Join a Home Cell Group near you where a small group of believers will walk with you through the season. You were made for community.</p>
+              </div>
+            </div>
+            <div class="pathway-step">
+              <div class="pathway-step__num">5</div>
+              <div>
+                <h4>Feed Your Faith</h4>
+                <p>Listen to sermons on healing and restoration. Watch our YouTube services. Let faith rise as you hear the Word. "Faith comes by hearing." — Romans 10:17</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- RECOMMENDED SERMONS -->
+          <div class="reveal">
+            <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:#1a1a2e;margin-bottom:20px;">Sermons for When You're Hurting</h2>
+          </div>
+          <div class="sermon-rec-list reveal">
+            <a href="sermons.html" class="sermon-rec">
+              <div class="sermon-rec__play">▶</div>
+              <div class="sermon-rec__info">
+                <div class="sermon-rec__category">Healing & Restoration</div>
+                <div class="sermon-rec__title">Born to Overcome — Pain Doesn't Have the Final Word</div>
+                <div class="sermon-rec__meta">Bishop N.E. Moses · Sunday Service · April 2026</div>
+              </div>
+            </a>
+            <a href="sermons.html" class="sermon-rec">
+              <div class="sermon-rec__play">▶</div>
+              <div class="sermon-rec__info">
+                <div class="sermon-rec__category">Deliverance & Freedom</div>
+                <div class="sermon-rec__title">The Stronger Man — When God Steps Into Your Battle</div>
+                <div class="sermon-rec__meta">Bishop N.E. Moses · Jericho Experience 2025</div>
+              </div>
+            </a>
+            <a href="sermons.html" class="sermon-rec">
+              <div class="sermon-rec__play">▶</div>
+              <div class="sermon-rec__info">
+                <div class="sermon-rec__category">Prayer & Intercession</div>
+                <div class="sermon-rec__title">The Prayer That Moves Mountains</div>
+                <div class="sermon-rec__meta">Pastor Sarah Moses · Wednesday Midweek · March 2026</div>
+              </div>
+            </a>
+            <a href="sermons.html" class="sermon-rec">
+              <div class="sermon-rec__play">▶</div>
+              <div class="sermon-rec__info">
+                <div class="sermon-rec__category">HSFC 2026 Conference</div>
+                <div class="sermon-rec__title">My Cup Runs Over — Abundance in the Midst of Lack</div>
+                <div class="sermon-rec__meta">Bishop N.E. Moses · HSFC June 2026</div>
+              </div>
+            </a>
+          </div>
+
+        </main>
+
+        <!-- RIGHT: SIDEBAR -->
+        <aside>
+
+          <div class="sidebar-card reveal">
+            <h3>💬 Talk to Someone</h3>
+            <a href="contact.html" class="sidebar-link">
+              <div class="sidebar-link__icon">📞</div>
+              <span>Call the Church Line</span>
+            </a>
+            <a href="https://wa.me/2348000000000" target="_blank" rel="noopener" class="sidebar-link">
+              <div class="sidebar-link__icon">💬</div>
+              <span>WhatsApp a Pastor</span>
+            </a>
+            <a href="contact.html" class="sidebar-link">
+              <div class="sidebar-link__icon">📧</div>
+              <span>Send a Prayer Request</span>
+            </a>
+            <a href="contact.html" class="sidebar-link">
+              <div class="sidebar-link__icon">🗓️</div>
+              <span>Book a Counselling Session</span>
+            </a>
+            <div style="background:rgba(139,28,28,0.06);border-radius:10px;padding:12px;margin-top:16px;font-size:0.82rem;color:#666;line-height:1.6;">
+              <strong style="color:#8B1C1C;">Need immediate help?</strong><br>
+              Nigeria emergency services:<br>
+              <strong>199</strong> or <strong>112</strong>
+            </div>
+          </div>
+
+          <div class="sidebar-card reveal">
+            <h3>📍 Come See Us</h3>
+            <p style="font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:16px;">Our prayer team is available every Sunday after service. We also have Wednesday Midweek services at 6:00pm at our Okota Road location.</p>
+            <a href="plan-visit.html" class="btn btn--primary" style="display:block;text-align:center;padding:12px;font-size:0.9rem;">Plan Your Visit →</a>
+          </div>
+
+          <div class="sidebar-card reveal">
+            <h3>📖 Healing Scriptures</h3>
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <div style="background:#fafafa;border-radius:8px;padding:12px;font-size:0.82rem;color:#555;line-height:1.6;border-left:3px solid #8B1C1C;">
+                <strong style="color:#8B1C1C;display:block;margin-bottom:4px;">Psalm 34:18</strong>
+                "The Lord is close to the brokenhearted and saves those who are crushed in spirit."
+              </div>
+              <div style="background:#fafafa;border-radius:8px;padding:12px;font-size:0.82rem;color:#555;line-height:1.6;border-left:3px solid #C9A020;">
+                <strong style="color:#8B1C1C;display:block;margin-bottom:4px;">Isaiah 53:5</strong>
+                "By his wounds we are healed."
+              </div>
+              <div style="background:#fafafa;border-radius:8px;padding:12px;font-size:0.82rem;color:#555;line-height:1.6;border-left:3px solid #8B1C1C;">
+                <strong style="color:#8B1C1C;display:block;margin-bottom:4px;">Jeremiah 29:11</strong>
+                "For I know the plans I have for you — plans to prosper you and not to harm you."
+              </div>
+              <div style="background:#fafafa;border-radius:8px;padding:12px;font-size:0.82rem;color:#555;line-height:1.6;border-left:3px solid #C9A020;">
+                <strong style="color:#8B1C1C;display:block;margin-bottom:4px;">Romans 8:28</strong>
+                "And we know that in all things God works for the good of those who love him."
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-card reveal">
+            <h3>🔗 Other Help Categories</h3>
+            <a href="find-help.html" class="sidebar-link">
+              <div class="sidebar-link__icon">🧠</div>
+              <span>When Your Mind Is Full</span>
+            </a>
+            <a href="find-help.html" class="sidebar-link">
+              <div class="sidebar-link__icon">👨‍👩‍👧</div>
+              <span>When Your Family is Breaking</span>
+            </a>
+            <a href="find-help.html" class="sidebar-link">
+              <div class="sidebar-link__icon">⛓️</div>
+              <span>When You Need Breakthrough</span>
+            </a>
+            <a href="find-help.html" class="sidebar-link">
+              <div class="sidebar-link__icon">💼</div>
+              <span>Financial Struggles</span>
+            </a>
+            <a href="find-help.html" class="sidebar-link">
+              <div class="sidebar-link__icon">✨</div>
+              <span>When You Need Salvation</span>
+            </a>
+          </div>
+
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRAYER REQUEST FORM -->
+  <section class="prayer-form-section">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__tag" style="color:#C9A020;border-color:rgba(201,160,32,0.3);background:rgba(201,160,32,0.08);">Prayer Request</span>
+        <h2 class="section__title" style="color:#fff;">Let Us Pray With You</h2>
+        <p class="section__subtitle" style="color:rgba(255,255,255,0.65);">Our intercessory prayer team prays over every request. Tell us what's on your heart — your pain is safe here.</p>
+      </div>
+      <form class="prayer-form reveal" id="prayerForm" onsubmit="handlePrayerForm(event)">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" placeholder="First name is fine">
+          </div>
+          <div class="form-group">
+            <label>Phone / WhatsApp</label>
+            <input type="tel" placeholder="+234 800 000 0000">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>What area of pain are you dealing with?</label>
+          <select>
+            <option value="">— Select the closest description —</option>
+            <option>Grief over the loss of a loved one</option>
+            <option>Illness / Physical pain (myself)</option>
+            <option>Illness of a family member</option>
+            <option>Heartbreak / Broken relationship</option>
+            <option>Loneliness / Isolation</option>
+            <option>Trauma or past abuse</option>
+            <option>Rejection or betrayal</option>
+            <option>Emotional / Mental pain</option>
+            <option>Other / Prefer not to say</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Share your prayer request *</label>
+          <textarea placeholder="You can be as specific or as general as you'd like. God hears every word." required></textarea>
+        </div>
+        <div class="form-group">
+          <label>Would you like a pastor to call you?</label>
+          <select>
+            <option>Yes — please call me</option>
+            <option>WhatsApp message only</option>
+            <option>No — just pray for me quietly</option>
+          </select>
+        </div>
+        <div class="prayer-privacy">
+          <input type="checkbox" id="privateCheck">
+          <label for="privateCheck">Keep this request private — share only with the prayer team, not the general congregation.</label>
+        </div>
+        <button type="submit" class="btn btn--primary" style="width:100%;margin-top:24px;padding:16px;font-size:1rem;">
+          Submit Prayer Request
+        </button>
+      </form>
+
+      <!-- PASTORAL CTA -->
+      <div class="pastoral-cta reveal" style="max-width:680px;margin:40px auto 0;">
+        <h3>Need More Than Prayer?</h3>
+        <p>Our pastoral counsellors offer private, one-on-one sessions for those walking through deep pain, trauma, or crisis. All sessions are free and completely confidential.</p>
+        <div class="pastoral-cta-btns">
+          <a href="contact.html" class="btn" style="background:#fff;color:#8B1C1C;font-weight:700;padding:12px 24px;">Book a Counselling Session</a>
+          <a href="https://wa.me/2348000000000" target="_blank" rel="noopener" class="btn" style="background:transparent;border:2px solid rgba(255,255,255,0.5);color:#fff;padding:12px 24px;">WhatsApp a Pastor</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OTHER CATEGORIES -->
+  <section class="section" style="background:#fafafa;">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__tag">Find More Help</span>
+        <h2 class="section__title">Other Areas We Can Help</h2>
+      </div>
+      <div class="other-cats reveal">
+        <a href="find-help.html" class="other-cat">
+          <span class="other-cat__icon">🧠</span>
+          <div class="other-cat__title">Mental Health</div>
+        </a>
+        <a href="find-help.html" class="other-cat">
+          <span class="other-cat__icon">🧭</span>
+          <div class="other-cat__title">Feeling Lost</div>
+        </a>
+        <a href="find-help.html" class="other-cat">
+          <span class="other-cat__icon">👨‍👩‍👧</span>
+          <div class="other-cat__title">Family & Marriage</div>
+        </a>
+        <a href="find-help.html" class="other-cat">
+          <span class="other-cat__icon">⛓️</span>
+          <div class="other-cat__title">Breakthrough</div>
+        </a>
+        <a href="find-help.html" class="other-cat">
+          <span class="other-cat__icon">💼</span>
+          <div class="other-cat__title">Financial Struggles</div>
+        </a>
+        <a href="find-help.html" class="other-cat">
+          <span class="other-cat__icon">🔗</span>
+          <div class="other-cat__title">Addiction</div>
+        </a>
+        <a href="find-help.html" class="other-cat">
+          <span class="other-cat__icon">🕊️</span>
+          <div class="other-cat__title">Grieving</div>
+        </a>
+        <a href="find-help.html" class="other-cat">
+          <span class="other-cat__icon">✨</span>
+          <div class="other-cat__title">Salvation</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo">
+          <img src="logo/Overcomers Church World Outreach logo.jpg" alt="" style="width:36px;height:36px;border-radius:50%;object-fit:cover;margin-right:4px;">
+          <span class="footer__logo-name">Overcomers Church World Outreach</span>
+        </a>
+        <p class="footer__tagline">We Are More Than Conquerors Through Him That Loved Us.</p>
+        <div class="footer__socials">
+          <a href="https://www.facebook.com/OvercomersGrace" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/overcomersgrace" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.youtube.com/channel/UChNzaaQHWECdO50IFASv7bw" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__heading">Service Times</h4>
+        <div class="footer__service-time"><span>Sunday Service</span><span>8:00am</span></div>
+        <div class="footer__service-time"><span>Wednesday Midweek</span><span>6:00pm</span></div>
+        <div class="footer__service-time"><span>Youth (Fridays)</span><span>5:00pm</span></div>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__heading">Quick Links</h4>
+        <ul class="footer__links">
+          <li><a href="find-help.html">Find Help</a></li>
+          <li><a href="sermons.html">Sermons</a></li>
+          <li><a href="ministries.html">Ministries</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="plan-visit.html">Plan Your Visit</a></li>
+          <li><a href="give.html">Give Online</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__heading">Contact</h4>
+        <address class="footer__address">
+          Okota Road, Okota<br>
+          Lagos, Nigeria<br><br>
+          <a href="tel:+2348000000000">+234 800 000 0000</a><br>
+          <a href="mailto:info@overcomersworldoutreach.org">info@overcomersworldoutreach.org</a>
+        </address>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p>© 2026 Overcomers Church World Outreach. All rights reserved.</p>
+        <p style="font-size:0.8rem;color:#999;margin-top:4px;">If you are in crisis, please call Nigeria emergency services: 199 or 112</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/2348000000000" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="js/main.js"></script>
+  <script>
+    const scriptures = {
+      text: document.getElementById('scriptureText'),
+      ref: document.getElementById('scriptureRef')
+    };
+    function switchScripture(btn, text, ref) {
+      document.querySelectorAll('.scripture-tab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+      scriptures.text.style.opacity = '0';
+      scriptures.ref.style.opacity = '0';
+      setTimeout(() => {
+        scriptures.text.textContent = `"${text}"`;
+        scriptures.ref.textContent = ref;
+        scriptures.text.style.opacity = '1';
+        scriptures.ref.style.opacity = '1';
+      }, 200);
+    }
+    scriptures.text.style.transition = 'opacity 0.2s';
+    scriptures.ref.style.transition = 'opacity 0.2s';
+
+    document.querySelectorAll('.subtopic-chip').forEach(chip => {
+      chip.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelectorAll('.subtopic-chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+      });
+    });
+
+    function handlePrayerForm(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      btn.textContent = '🙏 Prayer Request Received — We\'re Praying For You';
+      btn.style.background = '#C9A020';
+      btn.style.color = '#1a1a2e';
+      btn.disabled = true;
+    }
+  </script>
+</body>
+</html>
